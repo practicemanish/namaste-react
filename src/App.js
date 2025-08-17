@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+// import ReactDOM from "react-dom/client"
+
+const elem = <span>React Element</span>
+
+const Title = () => {
+  return <h1 className="manu">Hey this is Title component</h1>;
+};
+
+// }
+const num =10000;
+function HeadingComponent() {
+  return(
+  <div id="container">
+
+    <h2>{num}</h2>
+    {elem}
+
+  <h1 className="head">Namaste React by Manish</h1>
+  <Title/>
+  </div>
+  )}
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+              <HeadingComponent />
+              
     </div>
-  );
+  ) 
 }
-
 export default App;
