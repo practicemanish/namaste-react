@@ -1,38 +1,129 @@
-.App {
+/* App.css */
+.logo-container {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.nav-items ul {
+  display: flex;
+  gap: 20px;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-items li:hover {
+  color: #61dafb; /* React blue */
+}
+
+.app {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+/* App.css */
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #282c34;
+  padding: 15px 30px;
+  color: white;
+  border: #282c34;
+}
+
+.logo-container {
+  font-size: 24px;
+  font-weight: bold;
+}
+.nav-items li {
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.nav-items li:hover {
+  color: #61dafb; /* React blue */
+}
+
+.app {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+}
+.logo-container{
+  width: 200px;
+}
+.res-card {
+  width: 250px;
+  color:brown;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(121, 13, 13, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: #fff;
+  margin: 16px;
+  cursor: pointer;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.res-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.res-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.res-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #0b0a0a;
+  margin: 12px 0;
+}
+.res-container{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+ flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.light-theme {
+  --bg-color: #ffffff;
+  --text-color: #121212;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dark-theme {
+  --bg-color: #121212;
+  --text-color: #ffffff;
 }
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s, color 0.3s;
+  margin: 0;
+  padding: 0;
+}
+
+
