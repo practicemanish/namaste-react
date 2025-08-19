@@ -68,3 +68,36 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+Namaste food app
+/**
+ * Header
+ * -logo
+ * -Nav items
+ * -About
+ * BODY
+ * -Search
+ * -RestaurantContainer
+ * Restaurant cart
+ * -img
+ * -name of restaurant
+ * -star rating , cuisine,delivery time
+ * FOOTER
+ * -Copyright
+ * links
+ * address
+ * contact
+
+ two type of export / import 
+
+ 1- Default export / import
+
+ export default component ;
+ import component from "path"
+
+ 1- Named export / import
+
+ export const component;
+ import {component} from "path"
+ 
