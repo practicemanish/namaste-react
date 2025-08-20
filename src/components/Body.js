@@ -9,14 +9,10 @@ const Body = () => {
 
   return (
     <div className="body">
-      <div className="Search">Search</div>
+      <div className="filter" ><button className="filter-btn" onClick={()=>{console.log("your button is clicked")}}>Top rated Restaurant
+        
+        </button></div>
       <div className="res-container">
-        {resList.map((restaurant) => (
-          <RestaurantCard key ={restaurant.data.id} resData={restaurant} />
-        ))}
-        {resList.map((restaurant) => (
-          <RestaurantCard key ={restaurant.data.id} resData={restaurant} />
-        ))}
         {resList.map((restaurant) => (
           <RestaurantCard key ={restaurant.data.id} resData={restaurant} />
         ))}

@@ -1,5 +1,5 @@
 
-import logo from "../order-food.png";
+import logo from "../burger.png";
 
 const Header = () => {
   return (
