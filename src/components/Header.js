@@ -1,7 +1,10 @@
 
+import { useState } from "react";
 import logo from "../burger.png";
 
 const Header = () => {
+  // let btnName = "Login";
+  const [btnName, setbtnName] = useState("login");
   return (
     <div className="header">
       <div className="logo-container">
@@ -13,6 +16,12 @@ const Header = () => {
           <li>About us</li>
           <li>Contact us</li>
           <li>Cart</li>
+          <button className="login" onClick={() => {
+            btnName ==="login"
+            ? setbtnName("logout"): setbtnName("login");
+              console.log("btn is clicked");
+
+          }}>{btnName}</button>
         </ul>
       </div>
     </div>

@@ -1,14 +1,15 @@
 
 import RestaurantCard from "./RestaurantCard.js"
-// import resList from "../utils/mockData.js";
 import { useEffect, useState } from "react";
-import resList from "../utils/mockData.js";
+// import resList from "../utils/mockData.js";
+import Shimmer from "./Shimmer.js";
+
 
 
 
 const Body = () => {
 //local state variable
-const [listofRestaurant, setlistofRestaurant] = useState(resList);
+const [listofRestaurant, setlistofRestaurant] = useState([]);
 
 // or we can also write it 
   // const arr = useState(reslist)
@@ -25,15 +26,22 @@ const [listofRestaurant, setlistofRestaurant] = useState(resList);
     const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.2664939&lng=83.0003942&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
 
     );
+
     const json = await data.json();
-    //  const restaurants =
-    //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
 
     console.log(json);
-    const restaurants = json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+
+    // optional chaining
+
+
     // setlistofRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-setlistofRestaurant(restaurants);
+setlistofRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
   };
+  if (listofRestaurant.length === 0) {
+  return <Shimmer />;
+}
+
 
 
   return (
@@ -41,7 +49,7 @@ setlistofRestaurant(restaurants);
       <div className="filter">
         <button className="filter-btn" onClick={()=>{
           const filteredList = listofRestaurant.filter(
-            (res)=>res.data.avgRating>4
+            (res)=>res.info.avgRating>4
           );
           setlistofRestaurant(filteredList);
         }}>Top Rated Restaurant </button>
