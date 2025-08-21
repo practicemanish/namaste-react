@@ -10,6 +10,11 @@ import Shimmer from "./Shimmer.js";
 const Body = () => {
 //local state variable
 const [listofRestaurant, setlistofRestaurant] = useState([]);
+const [searchText, setsearchText] = useState("");
+
+const [filteredRestaurant, setfilteredRestaurant]= useState([]);
+
+console.log("Body Rendered");
 
 // or we can also write it 
   // const arr = useState(reslist)
@@ -36,17 +41,34 @@ const [listofRestaurant, setlistofRestaurant] = useState([]);
 
     // setlistofRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
 setlistofRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+setfilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
   };
   if (listofRestaurant.length === 0) {
   return <Shimmer />;
 }
-
-
-
-  return (
+return (
     <div className="body">
       <div className="filter">
+        <div className="search">
+          <input type="text"  className="search-box" value={searchText}
+          onChange={(e) => {setsearchText(e.target.value);
+
+          } } 
+          />
+          <button onClick={() => {
+            //filter the restaurants cards and update the ui
+            //seachTEXT
+            console.log(searchText);
+            const filteredRestaurant = listofRestaurant.filter((res) => 
+            res.info.name.toLowerCase().includes(searchText)); 
+
+            setfilteredRestaurant(filteredRestaurant);
+          }}>Search</button>
+         
+          
+        </ div>
+         
         <button className="filter-btn" onClick={()=>{
           const filteredList = listofRestaurant.filter(
             (res)=>res.info.avgRating>4
@@ -56,7 +78,7 @@ setlistofRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyl
       </div>
     
       <div className="res-container">
-        {listofRestaurant.map((restaurant) => (
+        {filteredRestaurant.map((restaurant) => (
           <RestaurantCard key ={restaurant.info.id} resData={restaurant.info} />
         ))}
        

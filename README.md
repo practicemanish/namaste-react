@@ -100,4 +100,6 @@ Namaste food app
 
  export const component;
  import {component} from "path"
+
+ Now Adding Search functionality in our app so that our all concept of state variable is clear
  
