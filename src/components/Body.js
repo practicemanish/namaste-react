@@ -1,7 +1,7 @@
 
 import RestaurantCard from "./RestaurantCard.js"
 // import resList from "../utils/mockData.js";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import resList from "../utils/mockData.js";
 
 
@@ -17,6 +17,24 @@ const [listofRestaurant, setlistofRestaurant] = useState(resList);
   // const listOfRestaurant = arr[0];
   // const setlistOfRestaurant = arr[1];
 
+  useEffect(()=>{
+    fetchData();
+  }, []);
+
+  const fetchData = async()=>{
+    const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=25.2664939&lng=83.0003942&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING"
+
+    );
+    const json = await data.json();
+    //  const restaurants =
+    //   json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants || [];
+
+    console.log(json);
+    const restaurants = json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants;
+    // setlistofRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
+setlistofRestaurant(restaurants);
+  };
+
 
   return (
     <div className="body">
@@ -31,7 +49,7 @@ const [listofRestaurant, setlistofRestaurant] = useState(resList);
     
       <div className="res-container">
         {listofRestaurant.map((restaurant) => (
-          <RestaurantCard key ={restaurant.data.id} resData={restaurant} />
+          <RestaurantCard key ={restaurant.info.id} resData={restaurant.info} />
         ))}
        
         {/* <RestaurantCard resName ="Rahul Fast food"cuisine = "Burger, Fast food, Pudi" /> */}

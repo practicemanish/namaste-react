@@ -3,7 +3,7 @@
      const resList = [
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "12160",
       name: "Shivam Food Point",
@@ -144,7 +144,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "229",
       name: "Vandana Foods",
@@ -247,7 +247,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "428",
       name: "Rahul Biryani Pot",
@@ -382,7 +382,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "223",
       name: "Mahima Truffles",
@@ -523,7 +523,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "425",
       name: "Hotel Empire",
@@ -659,7 +659,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "201224",
       name: "Asha tiffins",
@@ -800,7 +800,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "59593",
       name: "Al Daaz",
@@ -902,7 +902,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "56589",
       name: "Roti-Wala",
@@ -1045,7 +1045,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "560153",
       name: "Rice Bowl",
@@ -1186,7 +1186,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "337335",
       name: "Kannur food kitchen",
@@ -1337,7 +1337,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "601",
       name: "Shivam Litti Chokha",
@@ -1478,7 +1478,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "256957",
       name: "Rahul beta Restaurant",
@@ -1624,7 +1624,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "642459",
       name: "Malnad Donne Biryani MDB",
@@ -1760,7 +1760,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "27643",
       name: "Ultimate Parathas",
@@ -1901,7 +1901,7 @@
   },
   {
     type: "restaurant",
-    data: {
+    info: {
       type: "F",
       id: "42294",
       name: "Udupi Palace",

@@ -7,7 +7,7 @@ const RestaurantCard = (props) => {
 
   const { resData } = props;
 
-  const { name, cuisines, avgRating, costForTwo, deliveryTime } = resData?.data;
+  const { name, cuisines, avgRating, costForTwo, deliveryTime ,cloudinaryImageId } = resData;
 
   // console.log(props);
   return (
@@ -16,14 +16,14 @@ const RestaurantCard = (props) => {
         className="res-logo"
         src={
           "https://media-assets.swiggy.com/swiggy/image/upload/" +
-          resData.data.cloudinaryImageId
+          cloudinaryImageId
         }
         alt="Biryani"
       />
 
       <h3>{name}</h3>
       <h4>{cuisines?.join(", ")}</h4>
-      <h4>Rs{costForTwo / 100} For two</h4>
+      <h4>{costForTwo} </h4>
       <h4>{avgRating} Stars</h4>
       <h3>{deliveryTime} minutes</h3>
     </div>
