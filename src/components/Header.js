@@ -1,8 +1,13 @@
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import logo from "../burger.png";
 
 const Header = () => {
+
+  useEffect(() => {
+
+    console.log("useEffect called");
+  })
   // let btnName = "Login";
   const [btnName, setbtnName] = useState("login");
   return (
@@ -10,7 +15,7 @@ const Header = () => {
       <div className="logo-container">
         <img src={logo} alt="Order Food" width="100px" />
       </div>
-      <div className="nav-items">
+      <div className="nav-items">  
         <ul>
           <li>Home</li>
           <li>About us</li>

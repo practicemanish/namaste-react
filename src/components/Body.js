@@ -14,7 +14,7 @@ const [searchText, setsearchText] = useState("");
 
 const [filteredRestaurant, setfilteredRestaurant]= useState([]);
 
-console.log("Body Rendered");
+// console.log("Body Rendered");
 
 // or we can also write it 
   // const arr = useState(reslist)
@@ -23,6 +23,11 @@ console.log("Body Rendered");
   // const listOfRestaurant = arr[0];
   // const setlistOfRestaurant = arr[1];
 
+
+//   Some Important points about useEffect
+// 1.if no dependecy array => useEffect is called on every render
+//   2.if dependecy array is empty = [] => useEffect is called on initial render(just once)
+//   3.if dependency array is [btnNameReact] = > called  everytime btnNameReact is updated
   useEffect(()=>{
     fetchData();
   }, []);
