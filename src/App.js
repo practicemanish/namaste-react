@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import DarkThemeToggle from "./DarkThemeToggle";
 import Header from "./components/Header";
-import Body from "./components/Body";
+// import Body from "./components/Body";
 import { Outlet } from "react-router-dom";
 
 
@@ -14,7 +14,7 @@ const AppLayout = () => {
   return (
     <div className="app">
       <Header /> 
-      <Body />
+      {/* <Body /> */}
       <Outlet />
     </div>
   );
