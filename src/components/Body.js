@@ -39,7 +39,7 @@ const [filteredRestaurant, setfilteredRestaurant]= useState([]);
 
     const json = await data.json();
 
-    console.log(json);
+    // console.log(json);
 
     // optional chaining
 
