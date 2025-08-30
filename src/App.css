@@ -182,6 +182,12 @@ a {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
 }
+.user-card{
+   box-sizing: border-box;
+   border-radius: 0%;
+   border: #61dafb;
+   background-color: rgb(92, 92, 80);
+}
 
 
 
