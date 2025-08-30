@@ -3,6 +3,7 @@ import RestaurantCard from "./RestaurantCard.js"
 import { useEffect, useState } from "react";
 // import resList from "../utils/mockData.js";
 import Shimmer from "./Shimmer.js";
+import { Link } from "react-router-dom";
 
 
 
@@ -66,7 +67,7 @@ return (
             //seachTEXT
             console.log(searchText);
             const filteredRestaurant = listofRestaurant.filter((res) => 
-            res.info.name.toLowerCase().includes(searchText)); 
+            res.info.name.toLowerCase().includes(searchText.toLowerCase())); 
 
             setfilteredRestaurant(filteredRestaurant);
           }}>Search</button>
@@ -84,7 +85,10 @@ return (
     
       <div className="res-container">
         {filteredRestaurant.map((restaurant) => (
-          <RestaurantCard key ={restaurant.info.id} resData={restaurant.info} />
+          <Link key ={restaurant.info.id}
+           to={"/restaurants/"+ restaurant?.info?.id}
+           >
+            <RestaurantCard  resData={restaurant.info} /></Link>
         ))}
        
         {/* <RestaurantCard resName ="Rahul Fast food"cuisine = "Burger, Fast food, Pudi" /> */}
