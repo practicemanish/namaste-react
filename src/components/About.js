@@ -1,4 +1,4 @@
-import User from "./User";
+
 import UserClass from "./UserClass";
 import {Component} from "react";
 
@@ -15,7 +15,7 @@ constructor(props){
         <div>
               <h1>About Class Component</h1>
               <h2>This is about section by manish</h2>
-              <User name ={"Manish (function)"} />
+          
               <UserClass name={"manish (class)"} location={"Dehradoon class"} />
 
         </div>

@@ -3,33 +3,31 @@ class UserClass extends React.Component{
     constructor (props){
         super (props);
 
-        this.state ={
-            count: 0,
+        this.state = {
+            userInfo:{
+                name:"Dummy",
+                location : "Default",
+            },
           
         };
-        console.log("Child Constructor");
+      
     }
-    render(){
-        const{name , location} = this.props;
-        const {count} = this.state;
-        console.log("child Render");
+    async componentDidMount() {
+       const data = await fetch("https://api.github.com/users/akshaymarch7");
+        const json = await data.json();
+        console.log(json);
+        this.setState({
+            userInfo: json,
+
+        });
+    }
+render(){
+        const{name , location, avatar_url} = this.state.userInfo;
+       
          return (
         <div className="user-card">
-            <h1>Class Count:{count}</h1>
-            <button onClick={()=>{
-               //NEVER UPDATE STATE VARIABLE DIRECTLY
-               this.setState({
-                count: this.state.count + 1,
-               });
-            }}>Count Increase</button>
-              <button onClick={()=>{
-               //NEVER UPDATE STATE VARIABLE DIRECTLY
-               this.setState({
-                count: this.state.count - 1,
-               });
-            }}>Count Decrease</button>
-           
-            <h2> Name: {name}</h2>
+        <img src={avatar_url} alt ={name} />
+        <h2> Name: {name}</h2>
             <h3>Location: {location}</h3>
             <h3>Contact me : manish@gmail.com</h3>
 
