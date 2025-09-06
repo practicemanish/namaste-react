@@ -16,7 +16,7 @@ const [searchText, setsearchText] = useState("");
 
 const [filteredRestaurant, setfilteredRestaurant]= useState([]);
 
-// console.log("Body Rendered");
+console.log("Body Rendered",listofRestaurant );
 
 // or we can also write it 
   // const arr = useState(reslist)
