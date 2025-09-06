@@ -11,7 +11,7 @@ const RestaurantCard = (props) => {
 
   // console.log(props);
   return (
-    <div className="m-4 p-4 w-[250px] rounded-lg" style={{ backgroundColor: "#f0f0f0" }}>
+    <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-200 hover:bg-gray-200" >
       <img
         className="rounded-lg"
         src={

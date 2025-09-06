@@ -19,7 +19,7 @@ const Header = () => {
         <img src={logo} alt="Order Food" width="100px" />
       </div>
       <div className="flex items-center">  
-        <ul className="flex p-4 m-4 space-x-3">
+        <ul className="flex items-center space-x-5">
           <li>
             Online Status:{onlineStatus ? "🟢" : "🔴"}
           </li>
@@ -36,12 +36,14 @@ const Header = () => {
               <Link to="/grocery">Grocery</Link>
             </li>
           <li>Cart</li>
-          <button className="login" onClick={() => {
+          <li>
+          <button className="px-6 py-2 rounded-lg font-semibold shadow-md transition-colors 
+             bg-blue-600 text-white hover:bg-blue-700 active:scale-95" onClick={() => {
             btnName ==="login"
             ? setbtnName("logout"): setbtnName("login");
               console.log("btn is clicked");
 
-          }}>{btnName}</button>
+          }}>{btnName}</button> </li>
         </ul>
       </div>
     </div>
