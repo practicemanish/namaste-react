@@ -1,26 +1,31 @@
 /* App.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 
 .logo-container {
   font-size: 24px;
   font-weight: bold;
-}
-
+} */
+/* 
 .nav-items ul {
   display: flex;
   gap: 20px;
   list-style-type: none;
   margin: 0;
   padding: 0;
-}
+} */
 
-.nav-items li:hover {
-  color: #61dafb; /* React blue */
-}
-
+/* .nav-items li:hover {
+  color: #61dafb; 
+} */
+/* 
 .app {
   font-family: Arial, sans-serif;
   margin: 20px;
 }
-/* App.css */
+
 
 .header {
   display: flex;
@@ -42,7 +47,7 @@
 }
 
 .nav-items li:hover {
-  color: #61dafb; /* React blue */
+  color: #61dafb; 
 }
 
 .app {
@@ -91,9 +96,9 @@
 }
 
 .res-link {
-  text-decoration: none;     /* remove underline */
-  color: inherit;            /* inherit text color */
-  display: block;            /* make link block-level */
+  text-decoration: none;     
+  color: inherit;           
+  display: block;           
   transition: transform 0.2s ease, box-shadow 0.2s ease;
   border-radius: 12px;
 }
@@ -141,7 +146,7 @@
   border-color: #121212;
 
 }.login {
-  background-color: #ff6b6b; /* Swiggy-style coral red */
+  background-color: #ff6b6b; 
   color: white;
   font-size: 16px;
   font-weight: 600;
@@ -165,13 +170,12 @@
   margin: 1rem;
 
 }
-/* Remove underline & default link color everywhere */
+
 a {
   text-decoration: none !important;
   color: inherit !important;
 }
 
-/* For restaurant cards specifically */
 .res-link {
   display: block;
   border-radius: 12px;
@@ -226,4 +230,4 @@ body {
   padding: 0;
 }
 
-
+ */
