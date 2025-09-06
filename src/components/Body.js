@@ -72,7 +72,7 @@ return (
 
           } } 
           />
-          <button className="px-4 py-2 bg-green-100 m-4" onClick={() => {
+          <button className="px-4 py-2 bg-green-100 m-4 rounded-lg" onClick={() => {
             //filter the restaurants cards and update the ui
             //seachTEXT
             console.log(searchText);
@@ -85,7 +85,7 @@ return (
           
         </ div>
          
-        <button className="filter-btn" onClick={()=>{
+        <button className="flex px-4 py-2 bg-gray-100 m-2 items-center rounded-full font-semibold" onClick={()=>{
           const filteredList = listofRestaurant.filter(
             (res)=>res.info.avgRating>4
           );
@@ -93,7 +93,7 @@ return (
         }}>Top Rated Restaurant </button>
       </div>
     
-      <div className="res-container">
+      <div className="flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
           <Link key ={restaurant.info.id}
            to={"/restaurants/"+ restaurant?.info?.id}
