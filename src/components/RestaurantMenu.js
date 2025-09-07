@@ -1,6 +1,7 @@
 import Shimmer from './Shimmer';
 import { useParams } from 'react-router-dom';
 import useRestaurantMenu from '../utils/useRestaurantMenu';
+import RestaurantCategory from './RestaurantCategory.js';
 
 const RestaurantMenu = () => {
   const { resId } = useParams();
@@ -25,20 +26,24 @@ const RestaurantMenu = () => {
   // console.log("regularCards:", regularCards);
   const categories = regularCards.filter((c)=>c.card?.card?.["@type"]===
   "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory");
-  console.log(categories);
+  // console.log(categories);
 
-  const itemCards = regularCards
-    .map((c) => c?.card?.card?.itemCards)
-    .filter(Boolean)
-    .flat();
+  // const itemCards = regularCards
+  //   .map((c) => c?.card?.card?.itemCards)
+  //   .filter(Boolean)
+  //   .flat();
+    // console.log(itemCards);
 
   return (
     <div className="text-center">
       <h1 className='font-bold my-6 text-2xl'>{name}</h1>
-      <h4>{cuisines?.join(", ")}</h4>
-      <h1>Menu</h1>
-     
-    </div>
+      <p className='font-bold text-lg'>{cuisines?.join(", ")}-{costForTwoMessage}</p>
+      {/* categories accordian */}
+      {categories.map((category)=>(
+        <RestaurantCategory data={category?.card?.card} />
+        ))}
+
+</div>
   );
 };
 
