@@ -30,6 +30,7 @@ const RestaurantMenu = () => {
     .map((c) => c?.card?.card?.itemCards) // get only itemCards arrays
     .filter(Boolean) // remove undefined
     .flat(); // flatten into one array
+    
 
 
   return(
@@ -40,9 +41,9 @@ const RestaurantMenu = () => {
         <h4>{costForTwoMessage}</h4>
         <h1>Menu</h1>
         <ul>
-           {itemCards.map((item)=> (
+           {itemCards.map((item,index)=> (
             
-            <li  key={item.card.info.id}>
+            <li  key={item.card.info.id + "-" + index}>
                      {item.card.info.name}-{" Rs."} 
                      {item.card.info.price /100  || item.card.info.defaultPrice / 100 }         </li>
            )

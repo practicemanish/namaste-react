@@ -50,6 +50,7 @@ console.log("Body Rendered",listofRestaurant );
 setlistofRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 setfilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 
+
   };
 
 const onlineStatus = useOnlineStatus();
@@ -62,6 +63,7 @@ if (onlineStatus === false) {
 
   if (listofRestaurant.length === 0) {
   return <Shimmer />;
+  
 }
 return (
     <div className="body">
@@ -99,11 +101,13 @@ return (
            to={"/restaurants/"+ restaurant?.info?.id}
            >
             <RestaurantCard  resData={restaurant.info} /></Link>
+            
         ))}
        
         {/* <RestaurantCard resName ="Rahul Fast food"cuisine = "Burger, Fast food, Pudi" /> */}
       </div>
       </div>
+      
     
   );
 };
