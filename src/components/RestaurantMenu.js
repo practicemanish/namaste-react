@@ -3,57 +3,43 @@ import { useParams } from 'react-router-dom';
 import useRestaurantMenu from '../utils/useRestaurantMenu';
 
 const RestaurantMenu = () => {
-
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
 
-//   const params = useParams();
-  console.log(resId);
+  if (resInfo === null) return <Shimmer />;
 
-  if(resInfo === null)return <Shimmer />;
-//   const {name} =  resInfo?.cards[2]?.card?.card?.info;
   // ✅ Restaurant info
   const restaurantInfo = resInfo?.cards?.find(
     (c) => c?.card?.card?.info
   )?.card?.card?.info;
 
-  const name = restaurantInfo?.name ;
+  const name = restaurantInfo?.name;
   const cuisines = restaurantInfo?.cuisines;
   const costForTwoMessage = restaurantInfo?.costForTwoMessage;
 
-  // ✅ Extract categories that actually contain itemCards
+  // ✅ Extract categories safely
   const regularCards =
     resInfo?.cards?.find((c) => c.groupedCard)?.groupedCard?.cardGroupMap
       ?.REGULAR?.cards;
 
-        const itemCards = regularCards
-    .map((c) => c?.card?.card?.itemCards) // get only itemCards arrays
-    .filter(Boolean) // remove undefined
-    .flat(); // flatten into one array
-    
+  // console.log("regularCards:", regularCards);
+  const categories = regularCards.filter((c)=>c.card?.card?.["@type"]===
+  "type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory");
+  console.log(categories);
 
+  const itemCards = regularCards
+    .map((c) => c?.card?.card?.itemCards)
+    .filter(Boolean)
+    .flat();
 
-  return(
-     <div className="menu">
-        <h1>{name}</h1>
-
-        <h4>{cuisines.join(",")}</h4>
-        <h4>{costForTwoMessage}</h4>
-        <h1>Menu</h1>
-        <ul>
-           {itemCards.map((item,index)=> (
-            
-            <li  key={item.card.info.id + "-" + index}>
-                     {item.card.info.name}-{" Rs."} 
-                     {item.card.info.price /100  || item.card.info.defaultPrice / 100 }         </li>
-           )
-          
-            
-        )}
-        </ul>
-      </div>
+  return (
+    <div className="text-center">
+      <h1 className='font-bold my-6 text-2xl'>{name}</h1>
+      <h4>{cuisines?.join(", ")}</h4>
+      <h1>Menu</h1>
+     
+    </div>
   );
 };
-// finally restaurant menu feature added
 
 export default RestaurantMenu;
