@@ -1,4 +1,7 @@
+
+
 const ItemList = ({ items }) => {
+    console.log(items);
  
 
   return (
@@ -11,11 +14,20 @@ const ItemList = ({ items }) => {
           return (
             <div key={info.id || index} className="p-2 border-b">
               <div className="flex justify-between">
+                {/* <img src={CDN_URL + info.imageId} className="w-14 " /> */}
+                {info.imageId && (
+                <img
+                  src={`https://media-assets.swiggy.com/${info.imageId}`}
+                  alt={info.name}
+                  className="w-24 h-24 object-cover rounded-lg ml-4"
+                />
+              )}
                 <span className="font-medium">{info.name}</span>
                 <span>
                   Rs.{(info.price || info.defaultPrice) / 100}
                 </span>
               </div>
+              
               <p className="text-sm text-gray-600">{info.description}</p>
             </div>
           );
