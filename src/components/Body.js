@@ -17,6 +17,7 @@ const [searchText, setsearchText] = useState("");
 const [filteredRestaurant, setfilteredRestaurant]= useState([]);
 
 console.log("Body Rendered");
+console.log(listofRestaurant);
 
 // or we can also write it 
   // const arr = useState(reslist)
@@ -49,6 +50,8 @@ console.log("Body Rendered");
     // setlistofRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
 setlistofRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 setfilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+
+console.log(json?.data?.cards);
 
 
   };

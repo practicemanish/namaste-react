@@ -1,8 +1,5 @@
-
-
 const ItemList = ({ items }) => {
-    console.log(items);
- 
+  console.log(items);
 
   return (
     <div>
@@ -13,22 +10,34 @@ const ItemList = ({ items }) => {
         if (info) {
           return (
             <div key={info.id || index} className="p-2 border-b">
-              <div className="flex justify-between">
-                {/* <img src={CDN_URL + info.imageId} className="w-14 " /> */}
+              <div className="flex">
+                {/* Image with Add button */}
                 {info.imageId && (
-                <img
-                  src={`https://media-assets.swiggy.com/${info.imageId}`}
-                  alt={info.name}
-                  className="w-24 h-24 object-cover rounded-lg ml-4"
-                />
-              )}
-                <span className="font-medium">{info.name}</span>
-                <span>
-                  Rs.{(info.price || info.defaultPrice) / 100}
-                </span>
+                  <div className="relative w-24 h-24 mr-4">
+                    <img
+                      src={`https://media-assets.swiggy.com/${info.imageId}`}
+                      alt={info.name}
+                      className="w-full h-full object-cover rounded-lg"
+                    />
+                    <button
+                      className="absolute top-1 right-1 bg-white text-sm px-2 py-1 rounded shadow-md hover:scale-105 transition"
+                    >
+                      Add+
+                    </button>
+                  </div>
+                )}
+
+                {/* Text details */}
+                <div className="flex-1">
+                  <div className="flex justify-between items-start">
+                    <span className="font-medium">{info.name}</span>
+                    <span>Rs.{(info.price || info.defaultPrice) / 100}</span>
+                  </div>
+                  <p className="text-sm text-gray-600 mt-1">
+                    {info.description}
+                  </p>
+                </div>
               </div>
-              
-              <p className="text-sm text-gray-600">{info.description}</p>
             </div>
           );
         }
@@ -37,7 +46,7 @@ const ItemList = ({ items }) => {
         if (item?.itemCards) {
           return (
             <div key={item.title || index} className="mt-4">
-              <h3 className="font-bold text-lg">{item.title}</h3>
+              <h3 className="font-bold text-lg mb-2">{item.title}</h3>
               {/* Recursively render its itemCards */}
               <ItemList items={item.itemCards} />
             </div>
