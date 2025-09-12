@@ -40,7 +40,7 @@ const RestaurantMenu = () => {
       <p className='font-bold text-lg'>{cuisines?.join(", ")}-{costForTwoMessage}</p>
       {/* categories accordian */}
       {categories.map((category)=>(
-        <RestaurantCategory data={category?.card?.card} />
+        <RestaurantCategory key={category?.card?.card?.title} data={category?.card?.card} />
         ))}
 
 </div>

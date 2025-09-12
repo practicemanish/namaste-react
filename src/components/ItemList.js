@@ -1,10 +1,11 @@
 const ItemList = ({ items }) => {
-  console.log(items);
+  // console.log(items);
 
   return (
     <div>
       {(items || []).map((item, index) => {
         const info = item?.card?.info;
+        // console.log(info);
 
         // Case 1: Direct dish item
         if (info) {
