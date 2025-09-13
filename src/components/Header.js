@@ -1,11 +1,14 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useState,useContext } from "react";
 import logo from "../burger.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 const Header = () => {
 
+  const {loggedInUser} = useContext(UserContext);
+  console.log(loggedInUser);
   useEffect(() => {
 
     console.log("useEffect called");
@@ -35,7 +38,7 @@ const Header = () => {
             <li>
               <Link to="/grocery">Grocery</Link>
             </li>
-          <li>Cart</li>
+          <li className="font-bold">{loggedInUser}</li>
           <li>
           <button className="px-6 py-2 rounded-lg font-semibold shadow-md transition-colors 
              bg-blue-600 text-white hover:bg-blue-700 active:scale-95" onClick={() => {
