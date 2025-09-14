@@ -4,6 +4,7 @@ import logo from "../burger.png";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserContext from "../utils/UserContext";
+import { useSelector } from "react-redux";
 
 const Header = () => {
 
@@ -16,6 +17,12 @@ const Header = () => {
   // let btnName = "Login";
   const [btnName, setbtnName] = useState("login");
   const onlineStatus = useOnlineStatus();
+
+  const cartItems = useSelector((store)=> store.cart.items);
+  console.log(cartItems);
+
+
+
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg mb-2 ">
       <div className="logo-container">
@@ -39,7 +46,7 @@ const Header = () => {
               <Link to="/grocery">Grocery</Link>
             </li>
             <li className="px-4 font-bold text-xl">
-              <Link to="">Cart (0 item)</Link>
+              Cart- ({cartItems.length} items)
             </li>
           <li className="font-bold">{loggedInUser}</li>
           <li>
