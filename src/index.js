@@ -8,6 +8,7 @@ import Error from "./components/Error";
 import Body from "./components/Body";
 import RestaurantMenu from "./components/RestaurantMenu";
 import { createBrowserRouter, RouterProvider} from "react-router-dom";
+import Cart from "./components/Cart";
 
 
 
@@ -42,6 +43,12 @@ const appRouter = createBrowserRouter([
         path:"/restaurants/:resId",
         element: <RestaurantMenu />
        },
+       {
+        path:"/cart",
+        element: <Cart />
+       },
+       
+       
      ],
      errorElement:<Error />,
     },
