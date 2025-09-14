@@ -102,4 +102,9 @@ Namaste food app
  import {component} from "path"
 
  Now Adding Search functionality in our app so that our all concept of state variable is clear
+
+ # Redux TOOLKIT
+ -INSTALL REDUX
+ -BUID OUR APP
+ 
  
