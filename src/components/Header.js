@@ -35,8 +35,11 @@ const Header = () => {
           <li>
             <Link to="/contact">Contact us </Link>
             </li>
-            <li>
+            <li >
               <Link to="/grocery">Grocery</Link>
+            </li>
+            <li className="px-4 font-bold text-xl">
+              <Link to="">Cart (0 item)</Link>
             </li>
           <li className="font-bold">{loggedInUser}</li>
           <li>
