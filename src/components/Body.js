@@ -17,7 +17,7 @@ const [searchText, setsearchText] = useState("");
 const [filteredRestaurant, setfilteredRestaurant]= useState([]);
 
 console.log("Body Rendered");
-console.log(listofRestaurant);
+// console.log(listofRestaurant);
 
 // or we can also write it 
   // const arr = useState(reslist)
@@ -41,17 +41,26 @@ console.log(listofRestaurant);
     );
 
     const json = await data.json();
+      console.log(
+    json?.data?.cards.map((c, i) => ({
+      index: i,
+      restaurants: c.card?.card?.gridElements?.infoWithStyle?.restaurants?.length
+    }))
+  );
 
-    // console.log(json);
+    console.log(json);
+    const allRestaurants = json?.data?.cards?.map((c) => c?.card?.card?.gridElements?.infoWithStyle?.restaurants)
+    ?.filter(Boolean)?.flat();
 
     // optional chaining
 
 
     // setlistofRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
-setlistofRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-setfilteredRestaurant(json?.data?.cards[4]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+setlistofRestaurant(allRestaurants || []);
+setfilteredRestaurant(allRestaurants || []);
+console.log(allRestaurants);
 
-console.log(json?.data?.cards);
+// console.log(json?.data?.cards);
 
 
   };
