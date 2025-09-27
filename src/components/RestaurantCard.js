@@ -11,9 +11,9 @@ const RestaurantCard = (props) => {
 
   // console.log(props);
   return (
-    <div className="m-4 p-4 w-[250px] rounded-lg bg-gray-200 hover:bg-gray-200" >
+    <div className=" bg-white  m-4 p-4 w-[250px] h-[410px] rounded-lg hover:bg-gray-200 transition-all duration-300 overflow-hidden flex flex-col justify-between" >
       <img
-        className="rounded-lg"
+        className="rounded-lg h-40 w-full object-cover"
         src={
           "https://media-assets.swiggy.com/swiggy/image/upload/" +
           cloudinaryImageId
